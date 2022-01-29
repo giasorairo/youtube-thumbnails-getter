@@ -1,0 +1,12 @@
+{
+  "name": "youtube thumbnails getter",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "chrome extension to get youtube thumbnails",
+  "content_scripts": [{
+    "matches": ["https://*/*"],
+    "js": [
+      "index.js"
+    ]
+  }]
+}
