@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "chrome extension to get youtube thumbnails",
+  "browser_action": {
+    "default_popup": "popup-dialog.html"
+  },
   "content_scripts": [{
     "matches": ["https://*/*"],
     "js": [
