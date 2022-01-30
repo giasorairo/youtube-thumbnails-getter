@@ -1,8 +1,10 @@
 {
   "name": "youtube thumbnails getter",
+  "author": "gia_sorairo",
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "chrome extension to get youtube thumbnails",
+  "permissions": ["tabs"],
   "browser_action": {
     "default_popup": "popup-dialog.html"
   },
