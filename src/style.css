@@ -15,7 +15,7 @@ body {
 .title-wrapper {
   height: 43px;
   background-color: #fff;
-  padding: 0 38px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
 }
@@ -31,18 +31,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #EFEEF4;
-  padding: 18px 38px;
-}
-
-.thumbnail-text-wrapper {
-  margin-bottom: 18px;
-}
-
-.thumbnail-text {
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 35px;
-  color: #4E4E4E;
+  padding: 18px 10px;
 }
 
 .youtube-thumbnail-getter-thumbnail-img {
