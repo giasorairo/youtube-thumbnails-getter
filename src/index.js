@@ -44,8 +44,8 @@ const displayThumbnail = (elementId, thumbnailUrl) => {
 
 /** didmount */
 window.addEventListener('load', () => {
-  chrome.tabs.getSelected((tab) => {
-    const { url } = tab;
+  chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
+    const { url } = tabs[0];
     const videoId = getVideoId(url);
     const thumbnailUrl = getThumbnailUrl(videoId, 'hqdefault');
     displayThumbnail('youtube-thumbnail-getter-thumbnail-img', thumbnailUrl);
