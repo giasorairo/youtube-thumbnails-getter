@@ -42,6 +42,23 @@ const displayThumbnail = (elementId, thumbnailUrl) => {
   }
 }
 
+const download = (imageUrl, videoId) => {
+  const downloadButton = document.querySelector('.download-button');
+  if (!downloadButton) {
+    return;
+  }
+
+  const handleDownload = () => {
+    const anchor = document.createElement('a');
+    anchor.href = imageUrl;
+    // NOTE: よくわからんけどなぜかここでしているファイル名でダウンロードされない
+    anchor.download = `${videoId}.jpg`;
+    anchor.click();
+    anchor.remove();
+  };
+  downloadButton.addEventListener('click', handleDownload);
+};
+
 /** didmount */
 window.addEventListener('load', () => {
   chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
@@ -49,6 +66,8 @@ window.addEventListener('load', () => {
     const videoId = getVideoId(url);
     const thumbnailUrl = getThumbnailUrl(videoId, 'hqdefault');
     displayThumbnail('youtube-thumbnail-getter-thumbnail-img', thumbnailUrl);
+
+    download(thumbnailUrl, videoId);
   
     console.log('url : ', url);
     console.log('videoId : ', videoId);
